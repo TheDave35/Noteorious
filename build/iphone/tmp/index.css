@@ -1,0 +1,40 @@
+#notes {
+  margin:10px;
+  padding:5px;
+  background-color:#ffffff;
+  -webkit-border-radius: 10px;
+}
+
+#notes ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#notes li {
+  margin:10px 0 10px 0;
+  padding:0 0 0 20px;
+  background:url('page.png') no-repeat top left;
+}
+
+#new {
+  display:none; /*initially hidden*/
+  margin:10px;
+  padding:5px;
+  background-color:#ffffff;
+  -webkit-border-radius: 10px;
+}
+
+#new input {
+  background-color:#ababab;
+  width:220px;
+}
+
+#new td {
+  padding:5px;
+}
+
+.indicator {
+  padding-left:20px;
+  background:url(spinner.gif) no-repeat center left;
+}
