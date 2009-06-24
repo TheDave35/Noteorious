@@ -11,19 +11,17 @@ Titanium.UI.ready = function() {
       },
       create: {
         getUrl: function() {
-          return endpoint+'/notes';
+          return endpoint+'/notes.xml';
         },
         method: 'POST'
       },
       destroy: {
         getUrl: function(id) {
-          return endpoint+'/notes/'+id+'?_method=delete';
+          return endpoint+'/notes/'+id+'.xml';
         },
-        method: 'POST'
+        method: 'DELETE'
       }
     };
-    
-    //Data operations
     
     //Get all notes and append
     function doIndex() {
@@ -100,6 +98,7 @@ Titanium.UI.ready = function() {
             Titanium.API.debug(e);
           }
         };
+        Titanium.API.debug(services.destroy.getUrl(id));
         xhr2.open(services.destroy.method,services.destroy.getUrl(id));
         xhr2.send();
       }
