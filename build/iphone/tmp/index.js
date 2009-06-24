@@ -1,7 +1,7 @@
 Titanium.UI.ready = function() {
   try {
-    //Configure services
-    var endpoint = 'http://noteorious.heroku.com';
+    //Configure services (use your local IP address)
+    var endpoint = 'http://192.168.0.76:3000';
     var services = {
       index: {
         getUrl: function() {
@@ -17,9 +17,9 @@ Titanium.UI.ready = function() {
       },
       destroy: {
         getUrl: function(id) {
-          return endpoint+'/notes/'+id+'.xml?_method=delete';
+          return endpoint+'/notes/'+id+'.xml';
         },
-        method: 'POST'
+        method: 'DELETE'
       }
     };
     
@@ -98,6 +98,7 @@ Titanium.UI.ready = function() {
             Titanium.API.debug(e);
           }
         };
+        Titanium.API.debug(services.destroy.getUrl(id));
         xhr2.open(services.destroy.method,services.destroy.getUrl(id));
         xhr2.send();
       }

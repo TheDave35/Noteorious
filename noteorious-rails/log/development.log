@@ -1,0 +1,78 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotes (20090624185155)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090624185155')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notes")[0m
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:53:26) [GET]
+  [4;36;1mNote Load (0.7ms)[0m   [0;1mSELECT * FROM "notes" ORDER BY updated_at ASC[0m
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://192.168.0.76/notes.xml]
+
+
+Processing NotesController#create to xml (for 192.168.0.76 at 2009-06-24 13:53:29) [POST]
+  Parameters: {"note"=>{"content"=>""}}
+Completed in 8ms (View: 1, DB: 0) | 422 Unprocessable Entity [http://192.168.0.76/notes.xml?note[content]=]
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:53:29) [GET]
+  [4;35;1mNote Load (1.9ms)[0m   [0mSELECT * FROM "notes" ORDER BY updated_at ASC[0m
+Completed in 6ms (View: 1, DB: 2) | 200 OK [http://192.168.0.76/notes.xml]
+
+
+Processing NotesController#create to xml (for 192.168.0.76 at 2009-06-24 13:53:52) [POST]
+  Parameters: {"note"=>{"content"=>"Hey, this is a note"}}
+  [4;36;1mNote Create (0.5ms)[0m   [0;1mINSERT INTO "notes" ("updated_at", "content", "created_at") VALUES('2009-06-24 18:53:52', 'Hey, this is a note', '2009-06-24 18:53:52')[0m
+Completed in 122ms (View: 76, DB: 1) | 201 Created [http://192.168.0.76/notes.xml?note[content]=Hey,%20this%20is%20a%20note]
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:53:52) [GET]
+  [4;35;1mNote Load (1.5ms)[0m   [0mSELECT * FROM "notes" ORDER BY updated_at ASC[0m
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://192.168.0.76/notes.xml]
+
+
+Processing NotesController#create to xml (for 192.168.0.76 at 2009-06-24 13:54:02) [POST]
+  Parameters: {"note"=>{"content"=>"How you like me now?"}}
+  [4;36;1mNote Create (0.4ms)[0m   [0;1mINSERT INTO "notes" ("updated_at", "content", "created_at") VALUES('2009-06-24 18:54:02', 'How you like me now?', '2009-06-24 18:54:02')[0m
+Completed in 27ms (View: 2, DB: 0) | 201 Created [http://192.168.0.76/notes.xml?note[content]=How%20you%20like%20me%20now?]
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:54:02) [GET]
+  [4;35;1mNote Load (1.1ms)[0m   [0mSELECT * FROM "notes" ORDER BY updated_at ASC[0m
+Completed in 29ms (View: 8, DB: 1) | 200 OK [http://192.168.0.76/notes.xml]
+
+
+Processing NotesController#create to xml (for 192.168.0.76 at 2009-06-24 13:54:10) [POST]
+  Parameters: {"note"=>{"content"=>"Also a note..."}}
+  [4;36;1mNote Create (0.3ms)[0m   [0;1mINSERT INTO "notes" ("updated_at", "content", "created_at") VALUES('2009-06-24 18:54:10', 'Also a note...', '2009-06-24 18:54:10')[0m
+Completed in 32ms (View: 4, DB: 0) | 201 Created [http://192.168.0.76/notes.xml?note[content]=Also%20a%20note...]
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:54:10) [GET]
+  [4;35;1mNote Load (0.9ms)[0m   [0mSELECT * FROM "notes" ORDER BY updated_at ASC[0m
+Completed in 65ms (View: 4, DB: 1) | 200 OK [http://192.168.0.76/notes.xml]
+
+
+Processing NotesController#index to xml (for 192.168.0.76 at 2009-06-24 13:54:21) [GET]
+  [4;36;1mNote Load (1.1ms)[0m   [0;1mSELECT * FROM "notes" ORDER BY updated_at DESC[0m
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://192.168.0.76/notes.xml]

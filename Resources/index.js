@@ -1,7 +1,7 @@
 Titanium.UI.ready = function() {
   try {
-    //Configure services
-    var endpoint = 'http://noteorious.heroku.com';
+    //Configure services (use your local IP address)
+    var endpoint = 'http://192.168.0.76:3000';
     var services = {
       index: {
         getUrl: function() {
